@@ -1,9 +1,13 @@
+# -*- coding: utf-8 -*-
 """
 Bad Apple Detector using Adaptive Linear Neuron (Adaline)
 =========================================================
 This script implements an Adaline (ADAptive LInear NEuron) model to classify
 apples as "good" or "bad" based on their physical and chemical characteristics.
 """
+
+import sys, io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
 import numpy as np
 import pandas as pd
