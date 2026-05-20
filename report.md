@@ -366,13 +366,12 @@ new_preds = ada_final.predict(new_std)
 
 ### Analysis of Findings
 
-The Adaline model successfully identifies bad apples with a **recall of 99.75%**, meaning it catches virtually every bad apple. The overall accuracy of **85.38%** is strong for a purely linear model. Key findings include:
+The Adaline apple detector can recall bad apples with 99.75% recall. Meaning we will be able to detect almost all bad apples! An accuracy of 85.38% is very respectable for a purely linear classifier. Below are some other takeaways that we can gather:
+Sweetness and Juiciness are the top predictors when it comes to apple quality.
+Acidity had the highest negative correlation. Apples with high acidity will always be bad apples.
+Due to our small training test gap of 0.19%, we can conclude that a linear model with 7 features was just complex enough to fit this problem. In other words, there was no need for regularization.
+In terms of implementation, this detector would likely serve best as a first-stage quality gate. Do away with all apples flagged by the detector, then perform more costly human inspection on the marginal apples.
 
-1. **Sweetness and Juiciness** are the most predictive features for apple quality.
-2. **Acidity** is the strongest negative indicator — high-acidity apples are almost always bad.
-3. **Learning rate sensitivity** is critical: Adaline diverges quickly with rates ≥ 0.0003 on this dataset, highlighting the need for careful hyperparameter tuning.
-4. The near-zero training/test gap (0.19%) confirms that a linear model with 7 features is appropriately complex for this task — no regularization was needed.
-5. **For practical deployment**, this detector would be most useful as a first-pass quality gate: reject flagged apples immediately, and apply more expensive human inspection only to the borderline cases.
 
 ---
 
